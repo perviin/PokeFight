@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'GameBoy';
+  src: url('https://fonts.cdnfonts.com/css/pokemon-gb') format('woff2');
+}
+
+.font-gameboy {
+  font-family: 'GameBoy', monospace;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+}
+
+.bg-scanlines::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* GameBoy color palette */
+:root {
+  --gb-darkest: #0F380F;
+  --gb-dark: #306230;
+  --gb-light: #8BAC0F;
+  --gb-lightest: #9BBC0F;
+}
+
+@keyframes attack {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(20px); }
+  50% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes damage {
+  0% { transform: translateX(0); opacity: 1; }
+  25% { transform: translateX(-10px); opacity: 0.5; }
+  50% { transform: translateX(10px); opacity: 0.5; }
+  75% { transform: translateX(-10px); opacity: 0.5; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes faint {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes throwPokeball {
+  0% { 
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: translate(100px, -50px) rotate(180deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: translate(200px, 0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes pokemonEnter {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-attack {
+  animation: attack 0.5s ease-in-out;
+}
+
+.animate-damage {
+  animation: damage 0.5s ease-in-out;
+}
+
+.animate-faint {
+  animation: faint 1s ease-in forwards;
+}
+
+.animate-throw-pokeball {
+  animation: throwPokeball 1s ease-out forwards;
+}
+
+.animate-pokemon-enter {
+  animation: pokemonEnter 0.5s ease-out forwards;
+}
+
+/* DS Style */
+.ds-screen {
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  box-shadow: 0 0 0 2px #333, 0 0 0 4px #666;
+}
