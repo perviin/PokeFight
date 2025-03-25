@@ -8,12 +8,14 @@ interface SelectionScreenProps {
   onPokemonSelected: (pokemon: Pokemon | null ) => void;
   selectedPokemon: [Pokemon | null, Pokemon | null];
   currentPokemonIndex: number;
+  onShowStats: () => void; 
 }
 
 export const SelectionScreen: React.FC<SelectionScreenProps> = ({ 
   onPokemonSelected, 
   selectedPokemon,
-  currentPokemonIndex 
+  currentPokemonIndex,
+  onShowStats
 }) => {
   const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
   const [filteredList, setFilteredList] = useState<Pokemon[]>([]);
@@ -273,6 +275,15 @@ const [setCurrentPokemonIndex] = useState(0);
                 className="flex-1 bg-gameboy-dark text-gameboy-lightest font-gameboy py-2 rounded hover:bg-gameboy-darkest"
               >
                 SÉLECTIONNER
+              </button>
+            </div>
+
+            <div className='flex gap-4'>
+              <button 
+                onClick={onShowStats}
+                className="flex-1 bg-gameboy-dark text-gameboy-lightest font-gameboy py-2 rounded hover:bg-gameboy-darkest flex items-center justify-center gap-2"
+              >
+                VOIR LES STATISTIQUES
               </button>
             </div>
           </>
