@@ -26,6 +26,10 @@ function App() {
     setGameState(prev => ({ ...prev, screen: 'selection' }));
   };
 
+  const handleReturnToSelection = () => {
+    setGameState(prev => ({ ...prev, screen: 'selection' }));
+  }
+
   const handlePokemonSelected = (pokemon: Pokemon | null) => {
     setGameState(prev => {
       const newSelectedPokemon = [...prev.selectedPokemon] as [Pokemon | null, Pokemon | null];
@@ -96,7 +100,7 @@ function App() {
       {gameState.screen === 'stats' && (
         <StatsScreen 
           battleHistory={gameState.battleHistory}
-          onReturn={handleReturnToTitle}
+          onReturn={handleReturnToSelection}
         />
       )}
     </div>

@@ -354,11 +354,6 @@ export const BattleScreen: React.FC<BattleScreenProps> = ({ pokemon, onBattleEnd
                 </button>
               ))}
             </div>
-            <div className="mt-4">
-              {battleState.logs.map((log, index) => (
-                <p key={index} className="font-gameboy text-sm">{log}</p>
-              ))}
-            </div>
           </div>
         )}
 
