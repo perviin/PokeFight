@@ -67,6 +67,13 @@ function App() {
     }));
   };
 
+  const handleShowStats = () => {
+    setGameState(prev => ({
+     ...prev,
+     screen: 'stats', 
+    }))
+  }
+
   return (
     <div className="min-h-screen">
       {gameState.screen === 'title' && (
@@ -77,6 +84,7 @@ function App() {
           onPokemonSelected={handlePokemonSelected}
           selectedPokemon={gameState.selectedPokemon}
           currentPokemonIndex={gameState.currentPokemonIndex}
+          onShowStats={handleShowStats}
         />
       )}
       {gameState.screen === 'battle' && gameState.selectedPokemon[0] && gameState.selectedPokemon[1] && (

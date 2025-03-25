@@ -18,8 +18,13 @@ export const StatsScreen: React.FC<StatsScreenProps> = ({ battleHistory, onRetur
   };
 
   return (
-    <div className="min-h-screen bg-gameboy-lightest p-4">
-      <div className="max-w-2xl mx-auto bg-gameboy-light p-6 rounded shadow-lg">
+    <div className="min-h-screen bg-black flex flex-col items-center justify-center gap-4 p-4">
+      <div className="w-full max-w-2xl ds-screen relative overflow-hidden"
+           style={{
+             backgroundColor: '#8BAC0F',
+             backgroundSize: 'cover',
+             backgroundPosition: 'center'
+           }}>
         <h2 className="text-2xl font-gameboy text-gameboy-darkest mb-6 text-center">BATTLE STATS</h2>
         
         <div className="mb-8">
@@ -52,12 +57,15 @@ export const StatsScreen: React.FC<StatsScreenProps> = ({ battleHistory, onRetur
           ))}
         </div>
 
+        <div className="w-full max-w-2xl ds-screen bg-gameboy-lightest p-4">
         <button
           onClick={onReturn}
           className="w-full mt-8 bg-gameboy-dark text-gameboy-lightest font-gameboy py-2 rounded hover:bg-gameboy-darkest"
         >
-          RETURN TO TITLE
+          RETURN TO SELECTION
         </button>
+        </div>
+        
       </div>
     </div>
   );
