@@ -3,11 +3,11 @@ import { Howl } from 'howler';
 
 const sounds = {
   select: new Howl({
-    src: ['https://raw.githubusercontent.com/poke-sounds/select.mp3'],
+    src: ['/music/selection.mp3'],
     volume: 0.5
   }),
   battle: new Howl({
-    src: ['https://raw.githubusercontent.com/poke-sounds/battle.mp3'],
+    src: ['/music/battle.mp3'],
     volume: 0.3,
     loop: true
   })

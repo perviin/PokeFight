@@ -124,7 +124,6 @@ const [setCurrentPokemonIndex] = useState(0);
 
   const handleBackToPlayer1 = () => {
     playSound('select');
-    setCurrentPokemonIndex(0); // Retourner au premier joueur
     onPokemonSelected(null);
   };
 
