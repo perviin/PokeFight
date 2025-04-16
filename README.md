@@ -33,7 +33,7 @@
     
 
 ```
-https://github.com/ton-pseudo/PokeFight.git
+https://github.com/perviin/PokeFight.git
 cd PokeFight
 ```
 
