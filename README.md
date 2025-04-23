@@ -1,4 +1,4 @@
-# PokéFight - Simulateur de Combat Pokémon
+# PokéFight - https://perviin-pokefight.netlify.app
 
 **PokéFight** est un simulateur de combats Pokémon inspiré de l'interface de la Nintendo DS. L'utilisateur peut choisir deux Pokémon via l'interface, lancer le combat, et voir le résultat s'afficher automatiquement. Le tout est alimenté par la [PokéAPI](https://pokeapi.co/).
 
