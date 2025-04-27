@@ -123,12 +123,21 @@ export const SelectionScreen: React.FC<SelectionScreenProps> = ({
 
   const handleBackToPlayer1 = () => {
     playSound('select');
-    // Mettre à jour l'index pour revenir au joueur 1
+    console.log("Retour au joueur 1");
+    
     if (onSetCurrentPokemonIndex) {
+      // Retour à la sélection du joueur 1
       onSetCurrentPokemonIndex(0);
+      
+      // Pas besoin d'appeler onPokemonSelected(null) car cela effacerait 
+      // la sélection actuelle et pourrait causer des problèmes
+      
+      // Réinitialiser la recherche et l'index
+      setCurrentIndex(0);
+      setSearchTerm('');
     }
-    onPokemonSelected(null);
   };
+
 
   const handleNavigation = (direction: 'prev' | 'next') => {
     if (filteredList.length === 0) return;

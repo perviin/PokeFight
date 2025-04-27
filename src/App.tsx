@@ -53,6 +53,13 @@ function App() {
     });
   };  
 
+  const handleSetCurrentPokemonIndex = (index: number) => {
+    setGameState(prev => ({
+      ...prev,
+      currentPokemonIndex: index
+    }));
+  };
+
   const handleBattleEnd = (record: BattleRecord) => {
     setGameState(prev => ({
       ...prev,
@@ -85,12 +92,13 @@ function App() {
         <TitleScreen onStart={handleStartGame} />
       )}
       {gameState.screen === 'selection' && (
-        <SelectionScreen 
-          onPokemonSelected={handlePokemonSelected}
-          selectedPokemon={gameState.selectedPokemon}
-          currentPokemonIndex={gameState.currentPokemonIndex}
-          onShowStats={handleShowStats}
-        />
+      <SelectionScreen 
+        onPokemonSelected={handlePokemonSelected}
+        selectedPokemon={gameState.selectedPokemon}
+        currentPokemonIndex={gameState.currentPokemonIndex}
+        onSetCurrentPokemonIndex={handleSetCurrentPokemonIndex}
+        onShowStats={handleShowStats}
+      />
       )}
       {gameState.screen === 'battle' && gameState.selectedPokemon[0] && gameState.selectedPokemon[1] && (
         <BattleScreen 
